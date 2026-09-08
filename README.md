@@ -19,7 +19,7 @@ My proposed next abstraction is:
 Let h be the observed history and q an experiment, potentially a sequence of actions. Write
 
 $$
-\mathcal R_h(q)=P(Y\mid h,\operatorname{do}(q)).
+\mathcal R_h(q)=P(Y\mid h,\mathrm{do}(q)).
 $$
 
 This is the distribution of future observations if we perform q. The system has a learned approximation to it. A simple predictor summarizes that distribution with a mean and covariance:
@@ -173,9 +173,9 @@ There is an access constraint: one scalar soma residual does not automatically p
 The established architectural connection is limited but useful. Standard attention computes
 
 $$
-\operatorname{Attention}(Q,K,V)
+\mathrm{Attention}(Q,K,V)
 =
-\operatorname{softmax}(QK^\top/\sqrt{d_k})V.
+\mathrm{softmax}(QK^\top/\sqrt{d_k})V.
 $$
 
 Its routing weights depend on the input representations. A residual connection adds a sublayer output to its input; it is not, by definition, a measured prediction error. Likewise, an attention query is a vector used in compatibility calculations, not automatically an intervention on an external system [3].
